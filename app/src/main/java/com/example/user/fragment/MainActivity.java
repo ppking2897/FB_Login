@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
     AccessToken accessToken;
     private ProfileTracker profileTracker;
-    private Profile profile;
+
 
 
     @Override
