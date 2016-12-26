@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Button"
         android:id="@+id/test"
+        android:onClick="login"
         />
 
     <com.facebook.login.widget.LoginButton
@@ -21,12 +22,16 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
-
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/img"
         />
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello Fuck"
+        android:text="Hello World"
         />
 </LinearLayout>

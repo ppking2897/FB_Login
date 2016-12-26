@@ -10,10 +10,4 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.user.fragment.Main2Activity">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="logout"
-        android:onClick="logout"
-        />
 </RelativeLayout>
