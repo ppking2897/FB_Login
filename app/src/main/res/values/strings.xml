@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">FB_Login</string>
     <string name="facebook_app_id">359406281082083</string>
+    <string name="welcome">Welcome\nto\nQR-Shop</string>
+
 </resources>

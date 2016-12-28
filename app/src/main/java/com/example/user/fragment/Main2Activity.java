@@ -17,6 +17,8 @@ import android.widget.TextView;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class Main2Activity extends AppCompatActivity {
     private Button button;
     private Camera camera;
@@ -26,18 +28,44 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.CAMERA,
-                            Manifest.permission.READ_EXTERNAL_STORAGE,
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE
-                    },
-                    123);
-        } else {
-            init();
-        }
+
+        new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
+                .setTitleText("Are you sure?")
+                .setCustomImage(R.drawable.qrcode1)
+                .setContentText("Ready to start QR-Code now?")
+                .setCancelText("No,thanks!")
+                .setConfirmText("Let's Go!")
+                .showCancelButton(true)
+                .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sDialog) {
+                        Log.v("will", "??");
+                        finish();
+
+                    }
+                }).setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+            @Override
+            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                Log.v("will", "OK");
+                sweetAlertDialog.cancel();
+                if (ContextCompat.checkSelfPermission(Main2Activity.this,
+                        Manifest.permission.CAMERA)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(Main2Activity.this,
+                            new String[]{Manifest.permission.CAMERA,
+                                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                            },
+                            123);
+                } else {
+                    init();
+                }
+            }
+        }).show();
+
+
+
+
 
     }
 
