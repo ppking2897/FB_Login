@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.AccessToken;
@@ -96,29 +95,21 @@ public class MainActivity extends AppCompatActivity {
 
                 // gif 畫面設定
                 mGifLoadingView = new GifLoadingView();
-//                findViewById(R.id.login_button).setOnClickListener(
-//                        new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View v) {
-
-                                mGifLoadingView.setImageResource(R.drawable.load);
-                                mGifLoadingView.show(getFragmentManager(),"");
+                mGifLoadingView.setImageResource(R.drawable.load);
+                mGifLoadingView.show(getFragmentManager(),"");
 
 
-                                //間隔時間5秒跳頁
+                //間隔時間5秒跳頁
 
-                                new Handler().postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        final Intent mainIntent = new Intent(MainActivity.this, Main2Activity.class);
-                                        startActivity(mainIntent);
-                                        finish();        // 當跳到另一 Activity 時，讓 MainActivity 結束。
+                new Handler().postDelayed(new Runnable() {
+                       @Override
+                       public void run() {
+                       final Intent mainIntent = new Intent(MainActivity.this, Main2Activity.class);
+                       startActivity(mainIntent);
+                       finish();        // 當跳到另一 Activity 時，讓 MainActivity 結束。
                                         // 這樣可以避免使用者按 back 後，又回到該 activity。
-                                    }
-                                }, 5000);
-          //                  }
-
-              //          });
+                          }
+                        }, 5000);
             }
 
 
