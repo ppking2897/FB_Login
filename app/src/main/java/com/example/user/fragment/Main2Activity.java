@@ -31,7 +31,7 @@ public class Main2Activity extends AppCompatActivity {
 
         new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
                 .setTitleText("Are you sure?")
-                .setCustomImage(R.drawable.qrcode1)
+                .setCustomImage(R.drawable.question)
                 .setContentText("Ready to start QR-Code now?")
                 .setCancelText("No,thanks!")
                 .setConfirmText("Let's Go!")
